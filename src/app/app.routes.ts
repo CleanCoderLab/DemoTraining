@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
-import { App } from './app';
+import { AppComponent } from './app.component';
 
 export const routes: Routes = [
-	{ path: '', component: App },
-	{ path: 'courses', component: App },
-	{ path: 'courses/:id', component: App },
-	{ path: 'jobs', component: App },
-	{ path: 'jobs/:id', component: App },
-	{ path: 'resources', component: App },
-	{ path: 'about', component: App },
-	{ path: 'contact', component: App },
+	{ path: '', component: AppComponent },
+	{ path: 'courses', component: AppComponent },
+	{ path: 'courses/:id', component: AppComponent },
+	{ path: 'jobs', component: AppComponent },
+	{ path: 'jobs/:id', component: AppComponent },
+	{ path: 'resources', component: AppComponent },
+	{ path: 'about', component: AppComponent },
+	{ path: 'contact', component: AppComponent },
 	{ path: '**', redirectTo: '' }
 ];
