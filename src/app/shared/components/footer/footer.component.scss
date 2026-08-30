@@ -1,0 +1,92 @@
+.site-footer {
+  background: #18263a;
+  color: #dfeaf7;
+  padding: 64px 0 22px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr .8fr .8fr 1.2fr;
+  gap: 28px;
+}
+
+.footer-grid a,
+.footer-grid p,
+.footer-bottom {
+  color: #dfeaf7;
+}
+
+.footer-brand {
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.site-footer h4 {
+  margin: 0 0 16px;
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.site-footer a {
+  display: block;
+  color: #dfeaf7;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.site-footer p {
+  margin: 0;
+  line-height: 1.7;
+  font-size: 13px;
+}
+
+.footer-input {
+  display: flex;
+  margin-top: 18px;
+}
+
+.footer-input input {
+  flex: 1;
+  border: 1px solid rgba(255,255,255,.15);
+  background: rgba(255,255,255,.04);
+  color: #fff;
+  border-radius: 6px 0 0 6px;
+  padding: 13px 14px;
+}
+
+.footer-input button {
+  border: 0;
+  background: #e85d47;
+  color: #fff;
+  width: 42px;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  margin-top: 34px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  font-size: 12px;
+}
+
+@media (max-width: 760px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

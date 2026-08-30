@@ -1,0 +1,36 @@
+.listing-header {
+  padding: 80px 0 70px;
+  background: #f2f7ff;
+}
+
+.listing-header h1 {
+  font: 500 clamp(44px, 6vw, 69px)/.96 Georgia, serif;
+  letter-spacing: -.045em;
+  margin: 0;
+  color: #18263a;
+}
+
+.listing-header em {
+  color: #e85d47;
+  font-style: italic;
+}
+
+.listing-header > .container > p:last-child {
+  color: #6e7e91;
+  margin: 19px 0 0;
+}
+
+.listing-section { padding-top: 50px; }
+.filter-bar, .job-search { display: flex; gap: 10px; margin-bottom: 22px; }
+.filter-bar input, .filter-bar select { border: 1px solid #dbe4ee; border-radius: 6px; background: #fff; color: #354860; padding: 13px 15px; font: 12px 'Trebuchet MS'; outline: none; }
+.filter-bar input { flex: 1; }
+.filter-bar select { min-width: 150px; }
+.results-line { border-bottom: 1px solid #e4eaf0; padding: 8px 0 17px; display: flex; justify-content: space-between; color: #8090a2; font-size: 11px; margin-bottom: 24px; }
+.results-line span:first-child { color: #253c59; font-weight: 700; }
+.course-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.empty-state { border: 1px dashed #ced9e8; padding: 26px; border-radius: 8px; color: #62728a; }
+@media (max-width: 760px) {
+  .filter-bar { flex-wrap: wrap; }
+  .filter-bar input, .filter-bar select { width: 100%; flex: auto; }
+  .course-grid { grid-template-columns: 1fr; }
+}

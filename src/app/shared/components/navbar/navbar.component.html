@@ -1,0 +1,26 @@
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a routerLink="/" class="brand" aria-label="Demo Training home">
+      <span class="brand-mark">D<span>/</span></span>
+      <span>Demo <b>Training</b></span>
+    </a>
+
+    <nav class="desktop-nav">
+      @for (item of navItems; track item.path) {
+        <a
+          [routerLink]="item.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: !!item.exact }"
+        >
+          {{ item.label }}
+          @if (item.badge) {
+            <small>{{ item.badge }}</small>
+          }
+        </a>
+      }
+    </nav>
+
+    <a routerLink="/contact" class="nav-contact">Contact us →</a>
+    <button class="menu-button" type="button" aria-label="Open navigation">☰</button>
+  </div>
+</header>

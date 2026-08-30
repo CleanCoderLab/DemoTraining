@@ -1,0 +1,130 @@
+.detail-hero {
+  background: #f4f7fb;
+  padding: 80px 0 60px;
+}
+
+.detail-hero h1 {
+  font: 500 clamp(48px, 6vw, 78px)/.96 Georgia, serif;
+  letter-spacing: -.045em;
+  margin: 0;
+  color: #18263a;
+}
+
+.detail-hero em {
+  color: #e85d47;
+  font-style: italic;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: #e85d47;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.eyebrow {
+  color: #e85d47;
+  font-size: 10px;
+  letter-spacing: .18em;
+  font-weight: 800;
+  margin: 0 0 17px;
+}
+
+.detail-stats {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  color: #4d6178;
+}
+
+.detail-layout {
+  display: grid;
+  grid-template-columns: 1.5fr .8fr;
+  gap: 34px;
+  align-items: start;
+}
+
+.detail-layout h2 {
+  font: 500 clamp(33px, 4vw, 48px)/1.06 Georgia, serif;
+  letter-spacing: -.04em;
+  margin: 0;
+}
+
+.detail-layout em { color: #e85d47; font-style: italic; }
+.lead {
+  color: #425673;
+  line-height: 1.7;
+  font-size: 19px;
+  margin: 24px 0;
+}
+.subheading {
+  margin-top: 30px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #3a4e68;
+}
+.check-list {
+  display: grid;
+  gap: 10px;
+  color: #425673;
+}
+.check-list span { display: block; }
+.syllabus {
+  display: grid;
+  gap: 10px;
+}
+.syllabus div {
+  display: grid;
+  grid-template-columns: 48px 1fr 140px 24px;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid #e7edf3;
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+.syllabus b { color: #e85d47; }
+.syllabus small { color: #7688a1; }
+.enroll-card {
+  background: #fff;
+  border: 1px solid #e7edf3;
+  border-radius: 12px;
+  padding: 24px;
+}
+.course-icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 10px;
+  background: #e9f2ff;
+  color: #427db9;
+  font-size: 26px;
+}
+.enroll-card h3 { margin: 18px 0 10px; }
+.enroll-card p { color: #607087; line-height: 1.7; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  text-decoration: none;
+  padding: 14px 20px;
+  border-radius: 7px;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+}
+.button-primary { background: #e85d47; color: #fff; }
+.full { width: 100%; }
+.enroll-card small { color: #7c8ba2; display: block; margin-top: 12px; }
+
+@media (max-width: 760px) {
+  .detail-layout { grid-template-columns: 1fr; }
+  .syllabus div { grid-template-columns: 33px 1fr 18px; }
+  .syllabus small { display: none; }
+}

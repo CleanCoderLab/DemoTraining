@@ -1,0 +1,23 @@
+<section class="listing-header resource-header">
+  <div class="container">
+    <p class="eyebrow">THE FIELD GUIDE</p>
+    <h1>Ideas for your <em>next step.</em></h1>
+    <p>Useful thinking for the work, interviews, and decisions ahead.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="resource-grid">
+      @for (resource of resourceList; track resource.title) {
+        <article class="resource-card">
+          <span class="resource-icon">{{resource.icon}}</span>
+          <small>{{resource.category}} · {{resource.time}}</small>
+          <h3>{{resource.title}}</h3>
+          <p>{{resource.description}}</p>
+          <a href="#" (click)="$event.preventDefault()">Read article →</a>
+        </article>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+:host {
+  display: block;
+  color: #162337;
+  background: #fff;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+.container {
+  width: min(1160px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.site-shell {
+  min-height: 100vh;
+}
+
+main {
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .container {
+    width: min(100% - 32px, 600px);
+  }
+}

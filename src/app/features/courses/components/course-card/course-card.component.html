@@ -1,0 +1,18 @@
+<article class="course-card">
+  <div class="card-top">
+    <span class="course-icon">{{course.icon}}</span>
+    <span class="level-pill">{{course.level}}</span>
+  </div>
+  <h3>{{course.title}}</h3>
+  <p>{{course.description}}</p>
+  <div class="tag-row">
+    @for (tech of course.technologies; track tech) {
+      <span>{{tech}}</span>
+    }
+  </div>
+  <div class="trainer">Trainer <b>{{course.trainer}}</b></div>
+  <div class="card-meta">
+    <span>• {{course.duration}}</span>
+    <a [routerLink]="['/courses', course.id]">View course →</a>
+  </div>
+</article>

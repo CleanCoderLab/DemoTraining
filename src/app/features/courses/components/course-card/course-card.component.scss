@@ -1,0 +1,42 @@
+.course-card {
+  background: #fff;
+  border: 1px solid #e7edf3;
+  border-radius: 8px;
+  padding: 23px;
+  transition: .25s;
+}
+.course-card:hover { box-shadow: 0 12px 28px #1b2f4a14; border-color: #c5d6ec; }
+.card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+.level-pill {
+  background: #eef5ff;
+  color: #6482a9;
+  font-size: 10px;
+  padding: 5px 8px;
+  border-radius: 999px;
+}
+.course-card h3 { margin: 0 0 10px; font-size: 20px; }
+.course-card p { color: #657790; line-height: 1.65; margin: 0; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.tag-row span {
+  background: #f3f7fb;
+  border: 1px solid #e5edf5;
+  color: #496780;
+  border-radius: 999px;
+  font-size: 10px;
+  padding: 7px 8px;
+}
+.trainer { color: #8995a3; font-size: 10px; padding: 3px 0 16px; }
+.trainer b { color: #304762; margin-left: 5px; }
+.card-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; color: #7789a2; font-size: 11px; }
+.card-meta a { color: #e85d47; text-decoration: none; font-weight: 700; }
+.course-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: #e9f2ff;
+  color: #427db9;
+  font-size: 20px;
+  flex: 0 0 auto;
+}

@@ -1,0 +1,47 @@
+@if (notice) {
+  <div class="toast" role="status">✓ {{notice}}</div>
+}
+
+<section class="contact-section">
+  <div class="container contact-grid">
+    <div>
+      <p class="eyebrow">LET'S TALK</p>
+      <h1>Start with a<br><em>conversation.</em></h1>
+      <p class="lead">Questions about a course, a career switch, or what comes next? We’re here for it.</p>
+
+      <div class="contact-detail">
+        <span>✉</span>
+        <div><small>Email us</small><strong>hello@demotraining.in</strong></div>
+      </div>
+
+      <div class="contact-detail">
+        <span>☎</span>
+        <div><small>Call us</small><strong>+91 80 4567 8900</strong></div>
+      </div>
+    </div>
+
+    <form class="contact-form" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+      <label>
+        Name
+        <input name="name" required ngModel placeholder="Your name" />
+      </label>
+      <label>
+        Email
+        <input name="email" type="email" required ngModel placeholder="you@example.com" />
+      </label>
+      <label>
+        Subject
+        <select name="subject" ngModel>
+          <option>Course enquiry</option>
+          <option>Career support</option>
+          <option>Partnership</option>
+        </select>
+      </label>
+      <label>
+        Message
+        <textarea name="message" required ngModel rows="5" placeholder="How can we help?"></textarea>
+      </label>
+      <button class="button button-primary" type="submit">Send message →</button>
+    </form>
+  </div>
+</section>
