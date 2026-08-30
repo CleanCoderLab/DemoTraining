@@ -1,9 +1,16 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'feature-about',
+  selector: 'app-about',
   standalone: true,
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  styleUrl: './about.component.scss'
 })
-export class AboutComponent {}
+export class AboutComponent {
+  readonly stats = [
+    { n: '500+', l: 'Students trained' },
+    { n: '20+', l: 'Courses & paths' },
+    { n: '50+', l: 'Industry projects' },
+    { n: '90%', l: 'Career success' }
+  ];
+}

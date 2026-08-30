@@ -1,23 +1,39 @@
 import { TestBed } from '@angular/core/testing';
-import { App } from './app';
+import { AppComponent } from './app.component';
+import { routes } from './app.routes';
+
+const collectRoutePaths = (routeList: any[], paths: string[] = []): string[] => {
+  for (const route of routeList) {
+    if (route.path) {
+      paths.push(route.path);
+    }
+    if (route.children) {
+      collectRoutePaths(route.children, paths);
+    }
+  }
+  return paths;
+};
 
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [App],
+      imports: [AppComponent],
     }).compileComponents();
   });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(App);
+    const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it('should render title', async () => {
-    const fixture = TestBed.createComponent(App);
-    await fixture.whenStable();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, my-angular-app');
+  it('should define feature routes for the refactored site', () => {
+    const paths = collectRoutePaths(routes);
+    expect(paths).toContain('');
+    expect(paths).toContain('about');
+    expect(paths).toContain('courses');
+    expect(paths).toContain('trainers');
+    expect(paths).toContain('placements');
+    expect(paths).toContain('contact');
   });
 });

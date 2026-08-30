@@ -1,0 +1,48 @@
+<section class="detail-hero">
+  <div class="container">
+    <a routerLink="/courses" class="back-link">← All courses</a>
+    <p class="eyebrow">COURSE DETAIL</p>
+    <h1>{{course.title}}</h1>
+    <p>{{course.description}}</p>
+    <div class="detail-stats">
+      <span>• <b>{{course.duration}}</b></span>
+      <span>◈ <b>{{course.level}}</b></span>
+      <span>⌁ <b>{{course.technologies.join(' · ')}}</b></span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container detail-layout">
+    <div>
+      <h2>Build skills that <em>show up.</em></h2>
+      <p class="lead">A practical path through the tools, habits, and projects that make a difference in your first role.</p>
+      <h3 class="subheading">What you'll learn</h3>
+      <div class="check-list">
+        <span>✓ Design and build production-ready applications</span>
+        <span>✓ Work confidently with modern development workflows</span>
+        <span>✓ Collaborate through Git, reviews, and agile rituals</span>
+        <span>✓ Present your projects clearly in technical interviews</span>
+      </div>
+      <h3 class="subheading">Your syllabus</h3>
+      <div class="syllabus">
+        @for (item of ['Foundations & tooling', 'Core development patterns', 'Data, APIs & integration', 'Capstone project & portfolio']; let i = $index; track item) {
+          <div>
+            <b>0{{i + 1}}</b>
+            <span>{{item}}</span>
+            <small>6 lessons · 2 weeks</small>
+            <span>+</span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <aside class="enroll-card">
+      <span class="course-icon">{{course.icon}}</span>
+      <h3>Ready to begin?</h3>
+      <p>Start learning with guidance and a community behind you.</p>
+      <button class="button button-primary full" type="button">Enroll now →</button>
+      <small>No payment required for this demo</small>
+    </aside>
+  </div>
+</section>

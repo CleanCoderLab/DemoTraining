@@ -1,8 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { Course, courses } from '../../models/course.model';
 
 @Component({
-  selector: 'courses-detail-page',
+  selector: 'app-course-details',
   standalone: true,
-  template: `<div class="container"><h2>Course detail</h2><p>Course detail placeholder</p></div>`
+  imports: [RouterLink],
+  templateUrl: './course-details.component.html',
+  styleUrl: './course-details.component.scss'
 })
-export class CourseDetailsPageComponent {}
+export class CourseDetailsComponent implements OnInit {
+  course!: Course;
+
+  constructor(private readonly route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.course = courses.find((item) => item.id === id) ?? courses[0];
+  }
+}

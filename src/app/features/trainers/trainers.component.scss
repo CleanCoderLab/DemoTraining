@@ -1,0 +1,48 @@
+.listing-header {
+  padding: 80px 0 70px;
+  background: #f2f7ff;
+}
+
+.listing-header h1 {
+  font: 500 clamp(44px, 6vw, 69px)/.96 Georgia, serif;
+  letter-spacing: -.045em;
+  margin: 0;
+  color: #18263a;
+}
+
+.listing-header em { color: #e85d47; font-style: italic; }
+.listing-header > .container > p:last-child { color: #6e7e91; margin: 19px 0 0; }
+
+.trainer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.trainer-card {
+  background: #fff;
+  border: 1px solid #e7edf3;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+.trainer-badge {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: #e85d47;
+  color: #fff;
+  font-size: 20px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 18px;
+}
+
+.trainer-card h3 { margin: 0 0 8px; }
+.role { color: #e85d47; font-weight: 700; margin-bottom: 8px; }
+.trainer-card p { margin: 0; color: #607087; }
+
+@media (max-width: 760px) {
+  .trainer-grid { grid-template-columns: repeat(2, 1fr); }
+}

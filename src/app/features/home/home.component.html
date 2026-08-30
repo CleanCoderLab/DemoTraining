@@ -1,6 +1,127 @@
-<section class="home-hero">
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</p>
+      <h1>Learn. Build.<br><em>Get Hired.</em></h1>
+      <p class="hero-text">Build in-demand IT skills, prepare for your career, and discover opportunities with Demo Training.</p>
+      <div class="hero-actions">
+        <a routerLink="/courses" class="button button-primary">Explore courses →</a>
+        <a routerLink="/placements" class="button button-quiet">Explore jobs →</a>
+      </div>
+      <div class="hero-proof">
+        <div class="avatar-stack"><i>AM</i><i>NR</i><i>VS</i><i>+</i></div>
+        <span><strong>500+ learners</strong><br>already building their future</span>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <div class="art-grid"></div>
+      <div class="floating-card progress-card"><span class="mini-icon orange">→</span> <div><small>Career progress</small><strong>72% on track</strong></div><b>+18%</b></div>
+      <div class="person-shape">
+        <div class="person-head"></div>
+        <div class="person-body"></div>
+        <div class="person-arm"></div>
+      </div>
+      <div class="floating-card lesson-card"><span class="mini-icon blue">✓</span> <div><small>Today's focus</small><strong>Interview prep</strong></div></div>
+      <div class="code-panel">● ship_your_future();</div>
+    </div>
+  </div>
+</section>
+
+<section class="logo-strip">
+  <div class="container logo-row"><span>SKILLS THAT MOVE YOU FORWARD</span><b>Microsoft</b><b>Google Cloud</b><b>amazon</b><b>Coursera</b><b>udemy</b></div>
+</section>
+
+<section class="section">
   <div class="container">
-    <h1>Welcome to Demo Training</h1>
-    <p>Home feature placeholder — move content from app.component.html here as part of decomposition.</p>
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">FIND YOUR DIRECTION</p>
+        <h2>Learn what the industry<br><em>is looking for.</em></h2>
+      </div>
+      <a routerLink="/courses" class="text-link">View all courses →</a>
+    </div>
+
+    <div class="category-grid">
+      @for (category of categories; track category.name) {
+        <a routerLink="/courses" class="category-card">
+          <span class="category-icon {{category.tone}}">{{category.icon}}</span>
+          <span>{{category.name}}</span>
+          <span class="arrow">→</span>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section soft-section">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">CURATED FOR MOMENTUM</p>
+        <h2>Courses that turn<br><em>curiosity into capability.</em></h2>
+      </div>
+      <a routerLink="/courses" class="text-link">Browse the library →</a>
+    </div>
+
+    <div class="course-grid">
+      @for (course of courseList; track course.id) {
+        <article class="course-card">
+          <div class="card-top"><span class="course-icon">{{course.icon}}</span><span class="level-pill">{{course.level}}</span></div>
+          <h3>{{course.title}}</h3>
+          <p>{{course.description}}</p>
+          <div class="tag-row">
+            @for (tech of course.technologies; track tech) {
+              <span>{{tech}}</span>
+            }
+          </div>
+          <div class="card-meta"><span>• {{course.duration}}</span><a [routerLink]="['/courses', course.id]">View course →</a></div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="career-band">
+  <div class="container career-grid">
+    <div>
+      <p class="eyebrow light">THE RIGHT OPPORTUNITY CHANGES EVERYTHING</p>
+      <h2>Start your career<br><em>journey.</em></h2>
+      <p>Explore roles from companies building what comes next. Your next opportunity could be closer than you think.</p>
+      <a routerLink="/placements" class="button button-light">Explore all jobs →</a>
+    </div>
+
+    <div class="job-preview">
+      @for (job of jobList; track job.id) {
+        <a [routerLink]="['/placements', job.id]" class="job-row">
+          <span class="company-logo">{{job.company.charAt(0)}}</span>
+          <span><strong>{{job.title}}</strong><small>{{job.company}} · {{job.location}}</small></span>
+          <span class="job-arrow">→</span>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">THE DEMO DIFFERENCE</p>
+        <h2>More than a course.<br><em>A launchpad.</em></h2>
+      </div>
+    </div>
+
+    <div class="feature-grid">
+      @for (feature of features; track feature.n) {
+        <div class="feature">
+          <span class="feature-number">{{feature.n}}</span>
+          <span class="feature-icon">{{feature.i}}</span>
+          <h3>{{feature.t}}</h3>
+          <p>{{feature.d}}</p>
+        </div>
+      }
+    </div>
   </div>
 </section>

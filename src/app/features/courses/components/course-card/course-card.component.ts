@@ -1,12 +1,14 @@
 import { Component, Input } from '@angular/core';
-import type { Course } from '../../models/course.model';
+import { RouterLink } from '@angular/router';
+import { Course } from '../../models/course.model';
 
 @Component({
-  selector: 'courses-course-card',
+  selector: 'app-course-card',
   standalone: true,
-  template: `<article class="course-card"><h3>{{course?.title}}</h3><p>{{course?.description}}</p></article>`,
-  styles: ['.course-card{border:1px solid #e7edf3;padding:12px;border-radius:8px;}']
+  imports: [RouterLink],
+  templateUrl: './course-card.component.html',
+  styleUrl: './course-card.component.scss'
 })
-export class CoursesCourseCardComponent {
-  @Input() course?: Course;
+export class CourseCardComponent {
+  @Input() course!: Course;
 }

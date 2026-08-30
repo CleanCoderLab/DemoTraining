@@ -1,8 +1,25 @@
 import { Component } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'feature-contact',
+  selector: 'app-contact',
   standalone: true,
-  template: `<div class="container"><h2>Contact</h2><p>Contact placeholder</p></div>`
+  imports: [FormsModule],
+  templateUrl: './contact.component.html',
+  styleUrl: './contact.component.scss'
 })
-export class ContactComponent {}
+export class ContactComponent {
+  notice = '';
+
+  showNotice(message: string): void {
+    this.notice = message;
+    setTimeout(() => this.notice = '', 3500);
+  }
+
+  onSubmit(form: NgForm): void {
+    if (form.valid) {
+      this.showNotice('Thanks! We will be in touch soon.');
+      form.reset();
+    }
+  }
+}

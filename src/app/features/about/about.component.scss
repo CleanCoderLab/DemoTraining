@@ -1,1 +1,75 @@
-.about { padding:40px 0; }
+.about-hero {
+  background: linear-gradient(135deg, #1a2d47, #354f77);
+  color: #fff;
+  padding: 120px 0 90px;
+}
+
+.about-hero h1 {
+  font: 500 clamp(48px, 6vw, 78px)/.96 Georgia, serif;
+  letter-spacing: -.045em;
+  margin: 0;
+  color: #fff;
+}
+
+.about-hero h1 em,
+.about-copy h2 em {
+  color: #ffb395;
+  font-style: italic;
+}
+
+.about-hero p {
+  color: rgba(255,255,255,.8);
+  max-width: 500px;
+  margin-top: 18px;
+}
+
+.about-copy {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.about-copy h2 {
+  font: 500 clamp(33px, 4vw, 48px)/1.06 Georgia, serif;
+  letter-spacing: -.04em;
+  margin: 0;
+}
+
+.lead {
+  color: #425673;
+  line-height: 1.7;
+  font-size: 19px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stats-grid div {
+  background: #fff;
+  border: 1px solid #e7edf3;
+  border-radius: 10px;
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.stats-grid strong {
+  display: block;
+  font-size: 24px;
+  color: #162337;
+  margin-bottom: 8px;
+}
+
+.stats-grid span {
+  color: #72829a;
+}
+
+@media (max-width: 760px) {
+  .about-copy,
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

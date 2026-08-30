@@ -1,0 +1,69 @@
+<section class="listing-header jobs-header">
+  <div class="container">
+    <p class="eyebrow">OPPORTUNITIES, CURATED</p>
+    <h1>Work that feels like <em>progress.</em></h1>
+    <p>Find your place on teams making useful things for the world.</p>
+  </div>
+</section>
+
+<section class="section listing-section">
+  <div class="container">
+    <div class="job-search">
+      <input type="search" placeholder="Job title, skill, or company" [(ngModel)]="search" />
+      <input type="search" placeholder="Location" [(ngModel)]="location" />
+      <button class="button button-primary" type="button">Search jobs →</button>
+    </div>
+
+    <div class="filter-bar compact">
+      <select [(ngModel)]="selectedMode">
+        <option>All modes</option>
+        <option>Remote</option>
+        <option>Hybrid</option>
+        <option>On-site</option>
+      </select>
+      <select>
+        <option>All experience</option>
+        <option>1–3 years</option>
+        <option>3–5 years</option>
+      </select>
+      <select>
+        <option>All job types</option>
+        <option>Full-time</option>
+      </select>
+      <span class="results-count">{{filteredJobs.length}} roles found</span>
+    </div>
+
+    <div class="job-list">
+      @for (job of filteredJobs; track job.id) {
+        <article class="job-card">
+          <span class="company-logo">{{job.company.charAt(0)}}</span>
+          <div class="job-content">
+            <div class="job-title-row">
+              <div>
+                <h3>{{job.title}}</h3>
+                <p>{{job.company}} · {{job.location}}</p>
+              </div>
+              <button class="save-button" type="button" (click)="toggleSave(job.id)" aria-label="Save job">
+                {{savedJobs.includes(job.id) ? '♥' : '♡'}}
+              </button>
+            </div>
+            <div class="job-facts">
+              <span>{{job.salary}}</span>
+              <span>{{job.experience}}</span>
+              <span>{{job.mode}}</span>
+              <span>{{job.posted}}</span>
+            </div>
+            <div class="tag-row">
+              @for (skill of job.skills; track skill) {
+                <span>{{skill}}</span>
+              }
+            </div>
+          </div>
+          <a [routerLink]="['/placements', job.id]" class="job-view">View job →</a>
+        </article>
+      } @empty {
+        <div class="empty-state">No roles found. Try a different search.</div>
+      }
+    </div>
+  </div>
+</section>

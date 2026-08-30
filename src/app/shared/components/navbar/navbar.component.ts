@@ -6,6 +6,14 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   standalone: true,
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrl: './navbar.component.scss'
 })
-export class NavbarComponent {}
+export class NavbarComponent {
+  readonly navItems = [
+    { label: 'Home', path: '/', exact: true },
+    { label: 'Courses', path: '/courses' },
+    { label: 'Jobs', path: '/placements', badge: 'new' },
+    { label: 'Resources', path: '/resources' },
+    { label: 'About', path: '/about' }
+  ];
+}

@@ -1,0 +1,42 @@
+<section class="listing-header">
+  <div class="container">
+    <p class="eyebrow">LEARN WITH INTENTION</p>
+    <h1>Find your next <em>skill.</em></h1>
+    <p>Practical training for the work you want to do.</p>
+  </div>
+</section>
+
+<section class="section listing-section">
+  <div class="container">
+    <div class="filter-bar">
+      <input type="search" placeholder="Search courses or technologies" [(ngModel)]="courseQuery" />
+      <select [(ngModel)]="courseCategory">
+        <option>All categories</option>
+        <option>.NET</option>
+        <option>Angular</option>
+        <option>Java</option>
+        <option>Python</option>
+        <option>React</option>
+        <option>Cloud & DevOps</option>
+        <option>QA Automation</option>
+        <option>SQL</option>
+      </select>
+      <select [(ngModel)]="courseLevel">
+        <option>All levels</option>
+        <option>Beginner</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+      </select>
+    </div>
+
+    <div class="results-line"><span>{{filteredCourses.length}} courses</span><span>Learn at your pace · build at your speed</span></div>
+
+    <div class="course-grid">
+      @for (course of filteredCourses; track course.id) {
+        <app-course-card [course]="course"></app-course-card>
+      } @empty {
+        <div class="empty-state">No courses match that search yet.</div>
+      }
+    </div>
+  </div>
+</section>
